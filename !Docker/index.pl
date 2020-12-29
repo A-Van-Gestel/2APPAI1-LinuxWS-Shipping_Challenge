@@ -1,7 +1,7 @@
 #!/usr/bin/perl
-use Socket 'inet_ntoa';
-$server_address = inet_ntoa(inet_aton($name)) or die "Can't get Server IP";
-$server_name = gethostbyaddr(inet_aton($server_address), AF_INET) or die "Can't get Server HostName";
+use Socket;
+my $server_address = inet_ntoa(inet_aton($name)) or die "Can't get Server IP";
+my $server_name = gethostbyaddr(inet_aton($server_address), AF_INET) or die "Can't get Server HostName";
 
 
 print "Content-type:text/html\r\n\r\n";
