@@ -1,0 +1,1 @@
+helm install sc-mysql bitnami/mysql --set auth.password=admin1234 --set auth.username=shipping_challenge --set auth.database=shipping_challenge

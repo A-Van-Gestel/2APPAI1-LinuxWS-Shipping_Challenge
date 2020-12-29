@@ -1,0 +1,28 @@
+--- Run docker image ---
+docker run -dit -p 80:80 shipping-challenge
+
+--- Build Docker image ---
+sudo docker build -t shipping-challenge .
+
+--- Check status ---
+docker ps -a
+
+--- Check Apache HTML Page ---
+curl localhost
+
+--- Remove whole line in NANO ---
+CTRL + K
+
+--- Remove all none running Docker images ---
+docker system prune
+
+
+
+
+
+
+--- sources ---
+https://github.com/pclinger/docker-apache-perl
+https://techexpert.tips/apache/perl-cgi-apache/
+https://www.mirantis.com/blog/how-do-i-create-a-new-docker-image-for-my-application/
+https://codefresh.io/docker-tutorial/build-docker-image-dockerfiles/
