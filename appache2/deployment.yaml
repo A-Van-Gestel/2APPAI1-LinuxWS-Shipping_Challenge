@@ -14,16 +14,16 @@ spec:
         app: apache2
     spec:
       containers:
-      - image: httpd # we pull appache2 (=httpd) from hub.docker.com
-        imagePullPolicy: Always # this will alwatch check for a newer image when a pod stars, you can also set it to IfNotPresent so it only downloads it if not on disk already
+      - image: johanaxel007/shipping-challenge:latest # Pull custom apache2 image from hub.docker.com
+        imagePullPolicy: Always # this will always check for a newer image when a pod stars, you can also set it to IfNotPresent so it only downloads it if not on disk already
         name: apache2 # name of the container, only used for you to know what is running
         ports:  
         - containerPort: 80 # this gives the port 80 the name apache2, it does not expose it to the outside world yet
           name: apache2
-        volumeMounts: #this part tells to mount the `wp-persistent-storage` to `/var/www/html`
-        - name: sc-apache2-persistent-storage
-          mountPath: "/var/www/html"
-      volumes:
-      - name: sc-appache2-persistent-storage # this is the actual definition of the `wp-persistent-storage` volume to tell it which PVC to use
-        persistentVolumeClaim:
-          claimName: sc-appache2-persistent-storage
+#        volumeMounts: #this part tells to mount the `wp-persistent-storage` to `/var/www/html`
+#        - name: sc-apache2-persistent-storage
+#          mountPath: "/var/www/html"
+#      volumes:
+#      - name: sc-appache2-persistent-storage # this is the actual definition of the `wp-persistent-storage` volume to tell it which PVC to use
+#        persistentVolumeClaim:
+#          claimName: sc-appache2-persistent-storage

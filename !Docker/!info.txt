@@ -17,12 +17,32 @@ CTRL + K
 docker system prune
 
 
+--- Kubectl apply ---
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+kubectl apply -f ingress.yaml
 
+
+--- Docker Push to Repo ---
+docker tag local-image:tagname new-repo:tagname
+docker push new-repo:tagname
+
+- For shipping-challenge -
+docker tag shipping-challenge:latest johanaxel007/shipping-challenge:latest
+docker push johanaxel007/shipping-challenge:latest
 
 
 
 --- sources ---
+- Apache2 + Perl -
 https://github.com/pclinger/docker-apache-perl
 https://techexpert.tips/apache/perl-cgi-apache/
 https://www.mirantis.com/blog/how-do-i-create-a-new-docker-image-for-my-application/
 https://codefresh.io/docker-tutorial/build-docker-image-dockerfiles/
+
+- My SQL -
+https://github.com/bitnami/charts/tree/master/bitnami/mysql
+
+-Docker Repository-
+https://docs.docker.com/docker-hub/repos/
+https://docs.docker.com/docker-hub/builds/
