@@ -14,8 +14,8 @@ RUN	apt-get update && apt-get upgrade -y \
 
 # Install Apache2 and Perl, enable cgid and disable the default site
 RUN apt-get install -y \
-	apache2 \
-	perl \
+		apache2 \
+		perl \
 	&& a2enmod cgid \
 	&& a2dissite 000-default \
 	&& rm /var/www/html/index.html
