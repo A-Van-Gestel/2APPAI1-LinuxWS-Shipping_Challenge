@@ -21,10 +21,12 @@ my $db_connection = DBI->connect("DBI:$db_driver:$db_scheme:$db_ip", "$db_userna
 print "Content-type:text/html\r\n\r\n";
 print '<html lang="en">';
 print '<head>';
-print '<title>Hello World - First CGI script on Apache2!</title>';
+print '<title>Hello World - First Shipping Challenge CGI script on Apache2!</title>';
+print '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css"/>';
 print '</head>';
 print '<body>';
 print '<h2>Hello World! TUX is in the house!</h2>';
+print '<p">Running MySQL + Perl + Apache2</p>';
 print "<p>Server IP = $server_ip</p>";
 
 
