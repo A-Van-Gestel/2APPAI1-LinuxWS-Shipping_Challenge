@@ -1,7 +1,8 @@
 #!/usr/bin/perl
-use strict;
-use warnings FATAL => 'all';
+# use CGI::Carp;
 use CGI::Carp qw(fatalsToBrowser);  # Print all errors to the browser
+# use strict;
+# use warnings FATAL => 'all';
 
 # Dynamic Server IP getting
 use Socket 'inet_ntoa';
@@ -19,7 +20,7 @@ my $db_connection = DBI->connect("DBI:$db_driver:$db_scheme:$db_ip", "$db_userna
 
 
 print "Content-type:text/html\r\n\r\n";
-print '<html>';
+print '<html lang="en">';
 print '<head>';
 print '<title>Hello World - First CGI script on Apache2!</title>';
 print '</head>';
