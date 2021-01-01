@@ -25,6 +25,7 @@ print '<title>Hello World - First Shipping Challenge CGI script on Apache2!</tit
 print '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css"/>';
 print '</head>';
 print '<body>';
+print '<div class="container">';
 print '<h2>Hello World! TUX is in the house!</h2>';
 print '<p">Running MySQL + Apache2 + Perl</p>';
 print "<p>Server IP = $server_ip</p>";
@@ -61,6 +62,6 @@ $db_connection->disconnect();
 
 
 
-
+print '</div>';
 print '</body>';
 print '</html>';
