@@ -18,6 +18,7 @@ RUN apt-get install -y \
 		perl \
 		libcgi-pm-perl \
 		libdbi-perl \
+		libdbd-mysql-perl \
 	&& a2enmod cgid \
 	&& a2dissite 000-default \
 	&& rm /var/www/html/index.html
