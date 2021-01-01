@@ -1,7 +1,7 @@
 #!/usr/bin/perl
-use CGI::Carp qw(fatalsToBrowser);  # Print all errors to the browser
-# use strict;
-# use warnings FATAL => 'all';
+use CGI::Carp qw(fatalsToBrowser); # Print all errors to the browser
+use strict;
+use warnings;
 
 # Dynamic Server IP getting
 use Socket 'inet_ntoa';
