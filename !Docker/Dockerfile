@@ -16,6 +16,8 @@ RUN	apt-get update && apt-get upgrade -y \
 RUN apt-get install -y \
 		apache2 \
 		perl \
+		libcgi-pm-perl \
+		libdbi-perl \
 	&& a2enmod cgid \
 	&& a2dissite 000-default \
 	&& rm /var/www/html/index.html

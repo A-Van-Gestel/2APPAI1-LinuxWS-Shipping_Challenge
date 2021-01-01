@@ -1,5 +1,4 @@
 #!/usr/bin/perl
-# use CGI::Carp;
 use CGI::Carp qw(fatalsToBrowser);  # Print all errors to the browser
 # use strict;
 # use warnings FATAL => 'all';
