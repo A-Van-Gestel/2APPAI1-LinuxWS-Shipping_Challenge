@@ -33,24 +33,21 @@ print "<p>Server IP = $server_ip</p>";
 
 
 
-# Drop table 'foo'. This may fail, if 'foo' doesn't exist
-# Thus we put an eval around it.
+# Drop table 'person'. This may fail, if 'person' doesn't exist thus we put an eval around it.
 eval { $db_connection->do("DROP TABLE foo") };
 print "<p>Dropping foo failed: $@</p>" if $@;
 
-# Create a new table 'foo'. This must not fail, thus we don't
-# catch errors.
-$db_connection->do("CREATE TABLE foo (id INTEGER, name VARCHAR(20))");
+# Create a new table 'person'. This must not fail, thus we don't catch errors.
+$db_connection->do("CREATE TABLE name (id INTEGER, name VARCHAR(20))");
 
-# INSERT some data into 'foo'. We are using $db_connection->quote() for
-# quoting the name.
-$db_connection->do("INSERT INTO foo VALUES (1, " . $db_connection->quote("Tim") . ")");
+# INSERT some data into 'person'. We are using $db_connection->quote() for quoting the name.
+$db_connection->do("INSERT INTO person VALUES (1, " . $db_connection->quote("Tim") . ")");
 
 # same thing, but using placeholders (recommended!)
-$db_connection->do("INSERT INTO foo VALUES (?, ?)", undef, 2, "Jochen");
+$db_connection->do("INSERT INTO person VALUES (?, ?)", undef, 2, "Jochen");
 
 # now retrieve data from the table.
-my $sth = $db_connection->prepare("SELECT * FROM foo");
+my $sth = $db_connection->prepare("SELECT * FROM person");
 $sth->execute();
 while (my $ref = $sth->fetchrow_hashref()) {
     print "<p>Found a row: id = $ref->{'id'}, name = $ref->{'name'}</p>";
