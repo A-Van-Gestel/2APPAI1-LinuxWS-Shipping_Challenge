@@ -1,6 +1,7 @@
 #!/usr/bin/perl
 use strict;
 use warnings FATAL => 'all';
+use CGI::Carp qw(fatalsToBrowser);  # Print all errors to the browser
 
 # Dynamic Server IP getting
 use Socket 'inet_ntoa';
@@ -11,7 +12,7 @@ my $server_ip = inet_ntoa(scalar gethostbyname(hostname() || 'localhost'));
 use DBI;
 my $db_driver = 'mysql';
 my $db_scheme = 'shipping_challenge';
-my $db_ip = 'localhost';
+my $db_ip = '10.99.221.78';
 my $db_username = 'shipping_challenge';
 my $db_password = 'admin1234';
 my $db_connection = DBI->connect("DBI:$db_driver:$db_scheme:$db_ip", "$db_username", "$db_password"); #or die $DBI::errstr;
