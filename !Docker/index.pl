@@ -19,6 +19,7 @@ my $db_connection = DBI->connect("DBI:$db_driver:$db_scheme:$db_ip", "$db_userna
 
 print 'Content-type:text/html\r\n\r\n';
 print <<"HTML_HEADER";
+Content-type:text/html\r\n\r\n'
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -82,6 +83,7 @@ $db_connection->disconnect();
 
 
 print <<"HTML_FOOTER";
+Content-type:text/html\r\n\r\n'
     </div>
 </body>
 </html>
