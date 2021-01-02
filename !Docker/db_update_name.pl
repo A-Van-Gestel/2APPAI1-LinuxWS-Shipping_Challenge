@@ -18,10 +18,12 @@ my $db_password = 'admin1234';
 my $db_connection = DBI->connect("DBI:$db_driver:$db_scheme:$db_ip", "$db_username", "$db_password"); #or die $DBI::errstr;
 
 print <<"HTML_HEADER";
-Content-type:text/html
+Content-type: text/html
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Hello World - First Shipping Challenge CGI script on Apache2!</title>
+    <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css"/>
 </head>
 <body>

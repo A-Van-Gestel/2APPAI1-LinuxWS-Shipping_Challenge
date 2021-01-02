@@ -27,9 +27,11 @@ RUN apt-get install -y \
 	
 # Copy custom shipping-challenge site config to container
 COPY shipping-challenge.conf /etc/apache2/sites-enabled/shipping-challenge.conf
-COPY index.pl db_seed.pl db_update_name.pl /var/www/html/
+COPY index.pl db_seed.pl db_update_name.pl favicon.ico /var/www/html/
 
 RUN chmod +x /var/www/html/index.pl \
+            /var/www/html/db_seed.pl \
+            /var/www/html/db_update_name.pl \
 	&& service apache2 restart
 
 # Expose port 80
