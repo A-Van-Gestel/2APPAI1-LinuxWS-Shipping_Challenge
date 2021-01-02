@@ -52,7 +52,7 @@ Content-type:text/html\n\n
 HTML_HEADER
 
 print "<p>Server IP = $server_ip</p>";
-print '<div class="alert alert-danger" role="alert">Database Reset!</div>';
+print '<div class="alert alert-success" role="alert">Database Reset!</div>';
 
 
 # Drop table 'person'. This may fail, if 'person' doesn't exist thus we put an eval around it.
