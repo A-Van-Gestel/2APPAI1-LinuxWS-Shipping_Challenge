@@ -33,21 +33,31 @@ Content-type:text/html\n\n
 </head>
 <body>
 <div id="page-container">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
+        <!-- Bootstrap - Navbar Brand -->
         <a class="navbar-brand">Shipping Challenge</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#MainNav" aria-controls="MainNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+
+        <div class="navbar-collapse collapse w-100" id="MainNav">
+            <!-- Navbar Left -->
+            <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="/">Home</a>
                 </li>
-                <li class="nav-item text-muted">
+                <li class="nav-item disabled">
                     <a class="nav-link" href="db_update_name.pl">Update Name</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="db_seed.pl">Reset Database</a>
+                </li>
+            </ul>
+            <!-- Navbar Right -->
+            <div role="separator" class="dropdown-divider" style="max-width: 5rem"></div>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <img src="tux_in_box.png" alt="Tux in box" width="30" height="30">
                 </li>
             </ul>
         </div>
@@ -110,7 +120,7 @@ print <<"HTML_FOOTER";
                     <a href="https://hub.docker.com/repository/docker/johanaxel007/shipping-challenge" target="_blank" rel="noopener" class="text-muted"><i class="fab fa-docker"></i></a>
                 </div>
                 <div class="col-5">
-                    <p>Linux Webservices - SHIPPING CHALLENGE 2020</p>
+                    <p>Linux Webservices - SHIPPING CHALLENGE - 2020</p>
                 </div>
             </div>
         </div>
