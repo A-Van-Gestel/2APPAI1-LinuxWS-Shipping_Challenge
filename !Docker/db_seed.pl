@@ -101,7 +101,7 @@ $db_connection->disconnect();
 # --- END: Database Table creation & Seeding ---
 
 
-print '<a href="/" class="btn btn-primary">Go Back</a>';
+print '<a href="/" class="btn btn-primary mt-3">Go Back</a>';
 
 print <<"HTML_FOOTER";
         </div>

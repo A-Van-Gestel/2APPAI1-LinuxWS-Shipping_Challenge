@@ -122,7 +122,7 @@ if ($form_id ne "" && $form_name ne "") {
     $db_connection->disconnect();
 }
 else {
-    print "<div class=\"alert alert-danger\" role=\"alert\">Something went wrong!</div>";
+    print "<div class=\"alert alert-danger\" role=\"alert\">Something went wrong! Probably empty input...</div>";
 }
 # --- END: Database Update Process ---
 
