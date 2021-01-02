@@ -79,30 +79,35 @@ HTML_EXTRA1
 
 
 
-
-# update statement
-my $sql = "UPDATE person
+if ($form_id != undef && $form_name != undef) {
+    # update statement
+    my $sql = "UPDATE person
            SET name = ?
 	       WHERE id = ?";
 
-my $sth = $db_connection->prepare($sql);
+    my $sth = $db_connection->prepare($sql);
 
-my $id = $form_id;
-my $name = $form_name;
+    my $id = $form_id;
+    my $name = $form_name;
 
-# bind the corresponding parameter
-$sth->bind_param(1,$name);
-$sth->bind_param(2,$id);
+    # bind the corresponding parameter
+    $sth->bind_param(1,$name);
+    $sth->bind_param(2,$id);
 
-# execute the query
-$sth->execute();
+    # execute the query
+    $sth->execute();
 
-print "<div class=\"alert alert-success\" role=\"alert\">The record on ID <b>$id</b> has been updated to <b>$name</b> successfully!</div>";
+    print "<div class=\"alert alert-success\" role=\"alert\">The record on ID <b>$id</b> has been updated to <b>$name</b> successfully!</div>";
 
-$sth->finish();
+    $sth->finish();
 
-# Disconnect from the database.
-$db_connection->disconnect();
+    # Disconnect from the database.
+    $db_connection->disconnect();
+}
+else {
+    print "<div class=\"alert alert-danger\" role=\"alert\">Something went wrong!</div>";
+}
+
 
 print '<a href="/" class="btn btn-primary">Go Back</a>';
 
