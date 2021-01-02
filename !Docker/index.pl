@@ -37,7 +37,7 @@ Content-type:text/html\n\n
                 <li class="nav-item active">
                     <a class="nav-link" href="/">Home</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item text-muted">
                     <a class="nav-link" href="db_update_name.pl">Update Name</a>
                 </li>
                 <li class="nav-item">
@@ -60,12 +60,12 @@ print <<"HTML_FORM";
     <div class="form-row">
         <div class="col-md-6 mb-3">
             <label for="id">ID:</label>
-            <input type="number" class="form-control" id="id" name="id" aria-describedby="id_help" min="0" step="1" oninput="validity.valid" value="1" required>
+            <input type="number" class="form-control" id="id" name="id" aria-describedby="id_help" min="0" step="1" value="1" required>
             <small id="id_help" class="form-text text-muted">Input the ID of the name you wish to update.</small>
         </div>
         <div class="col-md-6 mb-3">
             <label for="name">Name:</label>
-            <input type="text" class="form-control" id="name" name="name" aria-describedby="name_help" minlength="1" maxlength="50" oninput="validity.valid" value="Updated Name" required>
+            <input type="text" class="form-control" id="name" name="name" aria-describedby="name_help" minlength="1" maxlength="50" value="Updated Name" required>
             <small id="name_help" class="form-text text-muted">Input the new name for the chosen ID.</small>
         </div>
     </div>

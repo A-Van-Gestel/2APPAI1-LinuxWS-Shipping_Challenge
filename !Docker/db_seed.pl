@@ -37,7 +37,7 @@ Content-type:text/html\n\n
                 <li class="nav-item">
                     <a class="nav-link" href="/">Home</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item text-muted">
                     <a class="nav-link" href="db_update_name.pl">Update Name</a>
                 </li>
                 <li class="nav-item active">
@@ -62,13 +62,13 @@ eval { $db_connection->do("DROP TABLE person") };
 print "<p>Dropping person failed: $@</p>" if $@;
 
 # Create a new table 'person'. This must not fail, thus we don't catch errors.
-$db_connection->do("CREATE TABLE person (id INTEGER, name VARCHAR(50))");
+$db_connection->do("CREATE TABLE person (id INTEGER NOT NULL AUTO_INCREMENT primary key, name VARCHAR(50) NOT NULL)");
 
 # INSERT some data into 'person'. We are using $db_connection->quote() for quoting the name.
-$db_connection->do("INSERT INTO person VALUES (1, " . $db_connection->quote("Tim") . ")");
+$db_connection->do("INSERT INTO person VALUES (1, " . $db_connection->quote("Linus") . ")");
 
 # same thing, but using placeholders (recommended!)
-$db_connection->do("INSERT INTO person VALUES (?, ?)", undef, 2, "Jochen");
+$db_connection->do("INSERT INTO person VALUES (?, ?)", undef, 2, "Torvalds");
 
 # now retrieve data from the table.
 my $sth = $db_connection->prepare("SELECT * FROM person");
