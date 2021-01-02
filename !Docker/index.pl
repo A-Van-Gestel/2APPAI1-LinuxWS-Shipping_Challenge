@@ -29,6 +29,7 @@ Content-type:text/html\n\n
     <link rel="stylesheet" href="basic_footer.css"/>
 </head>
 <body>
+<div id="page-container">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
         <a class="navbar-brand">Shipping Challenge</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -94,6 +95,7 @@ $db_connection->disconnect();
 print <<"HTML_FOOTER";
         </div>
     </div>
+</div>
     <footer id="page-footer" class="bg-dark text-muted">
         <div class="container pt-4 text-center">
             <div class="row justify-content-center">
