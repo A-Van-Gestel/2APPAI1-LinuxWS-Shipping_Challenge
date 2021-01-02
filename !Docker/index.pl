@@ -33,25 +33,58 @@ Content-type:text/html\n\n
 </head>
 <body>
 <div id="page-container">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
-        <a class="navbar-brand">Shipping Challenge</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <nav id="nav" class="navbar navbar-expand-lg bg-dark">
+        <!-- Bootstrap - Navbar Brand -->
+        <!-- <a class="navbar-brand mb-0 h1" href="#"><i class="fas fa-home"></i> Portfolio</a> -->
+        <a class="navbar-brand mb-0 h1">Shipping Challenge</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#MainNav" aria-controls="MainNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+
+        <div class="navbar-collapse collapse w-100" id="MainNav">
+            <!-- Navbar Left -->
+            <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="/">Home</a>
                 </li>
-                <li class="nav-item text-muted">
+                <li class="nav-item disabled">
                     <a class="nav-link" href="db_update_name.pl">Update Name</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="db_seed.pl">Reset Database</a>
                 </li>
             </ul>
+            <!-- Navbar Right -->
+            <div role="separator" class="dropdown-divider" style="max-width: 5rem"></div>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <img src="tux_in_box.png" alt="Tux in box" width="30" height="30">
+                </li>
+            </ul>
         </div>
     </nav>
+
+
+
+<!--    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">-->
+<!--        <a class="navbar-brand">Shipping Challenge</a>-->
+<!--        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--            <span class="navbar-toggler-icon"></span>-->
+<!--        </button>-->
+<!--        <div class="collapse navbar-collapse" id="navbarNav">-->
+<!--            <ul class="navbar-nav">-->
+<!--                <li class="nav-item active">-->
+<!--                    <a class="nav-link" href="/">Home</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item text-muted">-->
+<!--                    <a class="nav-link" href="db_update_name.pl">Update Name</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="db_seed.pl">Reset Database</a>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </nav>-->
     <div id="page-main">
         <div class="container">
             <h2>Hello Shipping Challenge! TUX is in the house!</h2>
@@ -102,17 +135,17 @@ print <<"HTML_FOOTER";
     <footer id="page-footer" class="bg-dark text-muted">
         <div class="container pt-4 text-center">
             <div class="row justify-content-center">
-                <div class="col-6">
+                <div class="col-5">
                     <p>Copyright &copy; Axel Van Gestel - 2021</p>
-                </div>
-                <div class="col-6">
-                    <p>Linux Webservices - SHIPPING CHALLENGE 2020</p>
                 </div>
                 <div class="col-1">
                     <a href="https://github.com/A-Van-Gestel/2APPAI1-LinuxWS-Shipping_Challenge" target="_blank" rel="noopener" class="text-muted"><i class="fab fa-github"></i></a>
                 </div>
                 <div class="col-1">
                     <a href="https://hub.docker.com/repository/docker/johanaxel007/shipping-challenge" target="_blank" rel="noopener" class="text-muted"><i class="fab fa-docker"></i></a>
+                </div>
+                <div class="col-5">
+                    <p>Linux Webservices - SHIPPING CHALLENGE 2020</p>
                 </div>
             </div>
         </div>

@@ -27,7 +27,7 @@ RUN apt-get install -y \
 	
 # Copy custom shipping-challenge site config to container
 COPY shipping-challenge.conf /etc/apache2/sites-enabled/shipping-challenge.conf
-COPY index.pl db_seed.pl db_update_name.pl basic_footer.css favicon.ico /var/www/html/
+COPY index.pl db_seed.pl db_update_name.pl basic_footer.css favicon.ico tux_in_box.png /var/www/html/
 
 RUN chmod +x /var/www/html/index.pl \
             /var/www/html/db_seed.pl \

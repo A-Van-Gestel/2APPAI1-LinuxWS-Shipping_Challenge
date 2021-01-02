@@ -100,17 +100,17 @@ print <<"HTML_FOOTER";
     <footer id="page-footer" class="bg-dark text-muted">
         <div class="container pt-4 text-center">
             <div class="row justify-content-center">
-                <div class="col-6">
+                <div class="col-5">
                     <p>Copyright &copy; Axel Van Gestel - 2021</p>
-                </div>
-                <div class="col-6">
-                    <p>Linux Webservices - SHIPPING CHALLENGE 2020</p>
                 </div>
                 <div class="col-1">
                     <a href="https://github.com/A-Van-Gestel/2APPAI1-LinuxWS-Shipping_Challenge" target="_blank" rel="noopener" class="text-muted"><i class="fab fa-github"></i></a>
                 </div>
                 <div class="col-1">
                     <a href="https://hub.docker.com/repository/docker/johanaxel007/shipping-challenge" target="_blank" rel="noopener" class="text-muted"><i class="fab fa-docker"></i></a>
+                </div>
+                <div class="col-5">
+                    <p>Linux Webservices - SHIPPING CHALLENGE 2020</p>
                 </div>
             </div>
         </div>
