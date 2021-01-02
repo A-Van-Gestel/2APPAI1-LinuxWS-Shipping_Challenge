@@ -32,10 +32,10 @@ Content-type:text/html
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="index.pl">Home</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="db_seed.pl">Reset Database</a>
                 </li>
                 <li class="nav-item">
@@ -45,7 +45,7 @@ Content-type:text/html
         </div>
     </nav>
     <div class="container">
-        <h2>Hello Shipping Challenge! TUX is in the house!</h2>
+        <h2>Hello Shipping Challenge! TUX is Seeding the house!</h2>
         <p">Running MySQL + Apache2 + Perl</p>
 HTML_HEADER
 
