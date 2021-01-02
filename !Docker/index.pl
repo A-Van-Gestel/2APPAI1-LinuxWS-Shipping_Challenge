@@ -74,7 +74,7 @@ print <<"HTML_FORM";
 HTML_FORM
 
 
-
+# --- START: Database Receive Process ---
 # now retrieve data from the table.
 my $sth = $db_connection->prepare("SELECT * FROM person");
 $sth->execute();
@@ -85,6 +85,7 @@ $sth->finish();
 
 # Disconnect from the database.
 $db_connection->disconnect();
+# --- END: Database Receive Process ---
 
 
 print <<"HTML_FOOTER";
