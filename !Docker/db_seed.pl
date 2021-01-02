@@ -51,7 +51,9 @@ Content-type:text/html\n\n
         <p class="mb-0">Running MySQL + Apache2 + Perl</p>
 HTML_HEADER
 
-print "<p>Server IP = $server_ip</p>";
+print <<"HTML_EXTRA1";
+    <p>Server IP = $server_ip</p>
+HTML_EXTRA1
 print '<div class="alert alert-success" role="alert">Database Reset!</div>';
 
 
@@ -60,7 +62,7 @@ eval { $db_connection->do("DROP TABLE person") };
 print "<p>Dropping person failed: $@</p>" if $@;
 
 # Create a new table 'person'. This must not fail, thus we don't catch errors.
-$db_connection->do("CREATE TABLE person (id INTEGER, name VARCHAR(20))");
+$db_connection->do("CREATE TABLE person (id INTEGER, name VARCHAR(50))");
 
 # INSERT some data into 'person'. We are using $db_connection->quote() for quoting the name.
 $db_connection->do("INSERT INTO person VALUES (1, " . $db_connection->quote("Tim") . ")");
