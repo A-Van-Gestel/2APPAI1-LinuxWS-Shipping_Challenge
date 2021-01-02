@@ -54,16 +54,20 @@ HTML_HEADER
 print "<p>Server IP = $server_ip</p>";
 
 print <<"HTML_FORM";
-<FORM action = "db_update_name.pl" method = "GET">
-    <div class="form-group">
-        <label for="id">ID</label>
-        <input type="number" class="form-control" id="id" name="id" aria-describedby="id_help" value=1 required>
-        <small id="id_help" class="form-text text-muted">Input the ID of the name you wish to update.</small>
+<FORM action = "db_update_name.pl" method = "GET" class="mb-3">
+    <div class="form-row">
+        <div class="col-md-6 mb-3">
+            <label for="id">ID:</label>
+            <input type="number" class="form-control" id="id" name="id" aria-describedby="id_help" value=1 required>
+            <small id="id_help" class="form-text text-muted">Input the ID of the name you wish to update.</small>
+        </div>
     </div>
-    <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" class="form-control" id="name" name="name" aria-describedby="name_help" value="Updated Name" required>
-        <small id="name_help" class="form-text text-muted">Input the new name for the chosen ID.</small>
+    <div class="form-row">
+        <div class="col-md-6 mb-3">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" name="name" aria-describedby="name_help" value="Updated Name" required>
+            <small id="name_help" class="form-text text-muted">Input the new name for the chosen ID.</small>
+        </div>
     </div>
     <button type="submit" class="btn btn-primary">Update Name</button>
 </FORM>
