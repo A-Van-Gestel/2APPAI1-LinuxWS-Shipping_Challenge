@@ -70,16 +70,19 @@ Content-type:text/html\n\n
         <p class="mb-0">Running MySQL + Apache2 + Perl</p>
 HTML_HEADER
 
+my $ref_form_id = ref($form_id);
+my $ref_form_name = ref($form_name);
+
 print <<"HTML_EXTRA1";
     <p>Server IP = $server_ip</p>
     <p class="mb-0">Form input:
-    <p class="mb-0">ID = <b>$form_id</b> &#09; Type = ref($form_id)</p>
-    <p>Name = <b>$form_name</b> &#09; Type = ref($form_name)</p>
+    <p class="mb-0">ID = <b>$form_id</b> &#09; Type = $ref_form_id</p>
+    <p>Name = <b>$form_name</b> &#09; Type = $ref_form_name</p>
 HTML_EXTRA1
 
 
 
-if ($form_id != "" && $form_name != "") {
+if ($form_id ne "" && $form_name ne "") {
     # update statement
     my $sql = "UPDATE person
            SET name = ?
