@@ -61,8 +61,6 @@ print <<"HTML_FORM";
             <input type="number" class="form-control" id="id" name="id" aria-describedby="id_help" value=1 required>
             <small id="id_help" class="form-text text-muted">Input the ID of the name you wish to update.</small>
         </div>
-    </div>
-    <div class="form-row">
         <div class="col-md-6 mb-3">
             <label for="name">Name:</label>
             <input type="text" class="form-control" id="name" name="name" aria-describedby="name_help" value="Updated Name" required>
