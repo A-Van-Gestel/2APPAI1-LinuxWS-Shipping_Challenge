@@ -4,8 +4,11 @@
 
 
 html, body {
-    position: relative;
     height: 100%;
+}
+
+body {
+    position: relative;
 }
 
 #page-container {
@@ -22,4 +25,12 @@ html, body {
     height: var(--footer-height);;
     margin-top: calc(-1 * var(--footer-height));
     clear: both;
+}
+
+footer i {
+    font-size: xx-large;
+}
+
+footer a:hover {
+    color: white !important;
 }
