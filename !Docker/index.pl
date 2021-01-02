@@ -58,7 +58,7 @@ print "<p>Server IP = $server_ip</p>";
 my $sth = $db_connection->prepare("SELECT * FROM person");
 $sth->execute();
 while (my $ref = $sth->fetchrow_hashref()) {
-    print "<p class="mb-0">Found a row: id = $ref->{'id'}, name = $ref->{'name'}</p>";
+    print "<p class=\"mb-0\">Found a row: id = $ref->{'id'}, name = $ref->{'name'}</p>";
 }
 $sth->finish();
 

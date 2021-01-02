@@ -71,7 +71,7 @@ $sth->bind_param(2,$id);
 # execute the query
 $sth->execute();
 
-print "<div class="alert alert-success" role="alert">The record on ID $id has been updated to $name successfully!</div>";
+print "<div class=\"alert alert-success\" role=\"alert\">The record on ID $id has been updated to $name successfully!</div>";
 
 $sth->finish();
 
