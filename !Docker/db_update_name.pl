@@ -18,7 +18,7 @@ my $db_password = 'admin1234';
 my $db_connection = DBI->connect("DBI:$db_driver:$db_scheme:$db_ip", "$db_username", "$db_password"); #or die $DBI::errstr;
 
 # --- START: Get User input using GET ---
-local ($buffer, @pairs, $pair, $key, $value, %FORM);
+local (my $buffer, my @pairs, my $pair, my $key, my $value, my %FORM);
 # Read in text
 $ENV{'REQUEST_METHOD'} =~ tr/a-z/A-Z/;
 if ($ENV{'REQUEST_METHOD'} eq "GET") {
