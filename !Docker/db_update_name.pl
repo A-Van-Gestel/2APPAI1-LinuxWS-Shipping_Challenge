@@ -47,34 +47,31 @@ Content-type:text/html\n\n
         </div>
     </nav>
     <div class="container">
-        <h2>Hello Shipping Challenge! TUX is Updating Names in the house!</h2>
-        <p">Running MySQL + Apache2 + Perl</p>
+        <h2>Hello Shipping Challenge! TUX is updating names in the house!</h2>
+        <p class="mb-0">Running MySQL + Apache2 + Perl</p>
 HTML_HEADER
 
 print "<p>Server IP = $server_ip</p>";
 
+# update statement
+my $sql = "UPDATE person
+           SET name = ?,
+	   WHERE id = ?";
 
+my $sth = $db_connection->prepare($sql);
 
+my $id = 1;
+my $name = "Updated name";
 
-# Drop table 'person'. This may fail, if 'person' doesn't exist thus we put an eval around it.
-eval { $db_connection->do("DROP TABLE person") };
-print "<p>Dropping person failed: $@</p>" if $@;
+# bind the corresponding parameter
+$sth->bind_param(1,$name);
+$sth->bind_param(2,$id);
 
-# Create a new table 'person'. This must not fail, thus we don't catch errors.
-$db_connection->do("CREATE TABLE person (id INTEGER, name VARCHAR(20))");
-
-# INSERT some data into 'person'. We are using $db_connection->quote() for quoting the name.
-$db_connection->do("INSERT INTO person VALUES (1, " . $db_connection->quote("Tim") . ")");
-
-# same thing, but using placeholders (recommended!)
-$db_connection->do("INSERT INTO person VALUES (?, ?)", undef, 2, "Jochen");
-
-# now retrieve data from the table.
-my $sth = $db_connection->prepare("SELECT * FROM person");
+# execute the query
 $sth->execute();
-while (my $ref = $sth->fetchrow_hashref()) {
-    print "<p>Found a row: id = $ref->{'id'}, name = $ref->{'name'}</p>";
-}
+
+print "<div class="alert alert-success" role="alert">The record on ID $id has been updated to $name successfully!</div>";
+
 $sth->finish();
 
 # Disconnect from the database.

@@ -47,13 +47,12 @@ Content-type:text/html\n\n
         </div>
     </nav>
     <div class="container">
-        <h2>Hello Shipping Challenge! TUX is Seeding the house!</h2>
-        <p">Running MySQL + Apache2 + Perl</p>
+        <h2>Hello Shipping Challenge! TUX is resetting the house!</h2>
+        <p class="mb-0">Running MySQL + Apache2 + Perl</p>
 HTML_HEADER
 
 print "<p>Server IP = $server_ip</p>";
-
-
+print '<div class="alert alert-danger" role="alert">Database Reset!</div>';
 
 
 # Drop table 'person'. This may fail, if 'person' doesn't exist thus we put an eval around it.
@@ -73,7 +72,7 @@ $db_connection->do("INSERT INTO person VALUES (?, ?)", undef, 2, "Jochen");
 my $sth = $db_connection->prepare("SELECT * FROM person");
 $sth->execute();
 while (my $ref = $sth->fetchrow_hashref()) {
-    print "<p>Found a row: id = $ref->{'id'}, name = $ref->{'name'}</p>";
+    print "<p class="mb-0">Found a row: id = $ref->{'id'}, name = $ref->{'name'}</p>";
 }
 $sth->finish();
 
