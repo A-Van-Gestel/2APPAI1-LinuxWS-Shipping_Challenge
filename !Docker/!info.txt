@@ -56,6 +56,9 @@ https://metacpan.org/pod/CGI::Carp
 https://metacpan.org/pod/DBD::mysql             // MySQL stuff
 https://www.mysqltutorial.org/perl-mysql/
 https://www.mysqltutorial.org/perl-mysql/perl-mysql-update-data/
+https://www.w3schools.com/sql/sql_autoincrement.asp
+https://www.tutorialspoint.com/perl/perl_cgi_programming.htm        // User Input Forms
+https://alvinalexander.com/blog/post/perl/perl-if-else-elsif-syntax-example/        // IF ELSE Syntax
 
 - My SQL -
 https://github.com/bitnami/charts/tree/master/bitnami/mysql

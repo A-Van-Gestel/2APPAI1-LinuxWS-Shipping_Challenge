@@ -25,6 +25,8 @@ Content-type:text/html\n\n
     <title>Hello World - First Shipping Challenge CGI script on Apache2!</title>
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+    <link rel="stylesheet" href="basic_footer.css"/>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
@@ -46,9 +48,10 @@ Content-type:text/html\n\n
             </ul>
         </div>
     </nav>
-    <div class="container">
-        <h2>Hello Shipping Challenge! TUX is in the house!</h2>
-        <p class="mb-0">Running MySQL + Apache2 + Perl</p>
+    <div id="page-main">
+        <div class="container">
+            <h2>Hello Shipping Challenge! TUX is in the house!</h2>
+            <p class="mb-0">Running MySQL + Apache2 + Perl</p>
 HTML_HEADER
 
 print <<"HTML_EXTRA1";
@@ -56,21 +59,21 @@ print <<"HTML_EXTRA1";
 HTML_EXTRA1
 
 print <<"HTML_FORM";
-<FORM action = "db_update_name.pl" method = "GET" class="mb-3">
-    <div class="form-row">
-        <div class="col-md-6 mb-3">
-            <label for="id">ID:</label>
-            <input type="number" class="form-control" id="id" name="id" aria-describedby="id_help" min="0" step="1" value="1" required>
-            <small id="id_help" class="form-text text-muted">Input the ID of the name you wish to update.</small>
-        </div>
-        <div class="col-md-6 mb-3">
-            <label for="name">Name:</label>
-            <input type="text" class="form-control" id="name" name="name" aria-describedby="name_help" minlength="1" maxlength="50" value="Updated Name" required>
-            <small id="name_help" class="form-text text-muted">Input the new name for the chosen ID.</small>
-        </div>
-    </div>
-    <button type="submit" class="btn btn-primary">Update Name</button>
-</FORM>
+            <FORM action = "db_update_name.pl" method = "GET" class="mb-3">
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="id">ID:</label>
+                        <input type="number" class="form-control" id="id" name="id" aria-describedby="id_help" min="0" step="1" value="1" required>
+                        <small id="id_help" class="form-text text-muted">Input the ID of the name you wish to update.</small>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name" aria-describedby="name_help" minlength="1" maxlength="50" value="Updated Name" required>
+                        <small id="name_help" class="form-text text-muted">Input the new name for the chosen ID.</small>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Update Name</button>
+            </FORM>
 HTML_FORM
 
 
@@ -89,7 +92,26 @@ $db_connection->disconnect();
 
 
 print <<"HTML_FOOTER";
+        </div>
     </div>
+    <footer id="page-footer" class="bg-dark text-muted">
+        <div class="container pt-4 text-center">
+            <div class="row justify-content-center">
+                <div class="col-6">
+                    <p>Copyright &copy; Axel Van Gestel - 2021</p>
+                </div>
+                <div class="col-6">
+                    <p>Linux Webservices - SHIPPING CHALLENGE 2020</p>
+                </div>
+                <div class="col-1">
+                    <a href="https://github.com/A-Van-Gestel/2APPAI1-LinuxWS-Shipping_Challenge" target="_blank" rel="noopener" class="text-muted"><i class="fab fa-github"></i></a>
+                </div>
+                <div class="col-1">
+                    <a href="https://hub.docker.com/repository/docker/johanaxel007/shipping-challenge" target="_blank" rel="noopener" class="text-muted"><i class="fab fa-docker"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.bundle.min.js"></script>
 </body>
