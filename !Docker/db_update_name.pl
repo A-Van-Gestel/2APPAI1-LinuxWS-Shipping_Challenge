@@ -78,7 +78,7 @@ print <<"HTML_EXTRA1";
 HTML_EXTRA1
 
 
-
+# --- START: Database Update Process ---
 if ($form_id ne "" && $form_name ne "") {
     # update statement
     my $sql = "UPDATE person
@@ -107,6 +107,7 @@ if ($form_id ne "" && $form_name ne "") {
 else {
     print "<div class=\"alert alert-danger\" role=\"alert\">Something went wrong!</div>";
 }
+# --- END: Database Update Process ---
 
 
 print '<a href="/" class="btn btn-primary">Go Back</a>';

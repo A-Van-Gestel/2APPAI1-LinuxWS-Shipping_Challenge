@@ -57,6 +57,7 @@ HTML_EXTRA1
 print '<div class="alert alert-success" role="alert">Database Reset!</div>';
 
 
+# --- START: Database Table creation & Seeding ---
 # Drop table 'person'. This may fail, if 'person' doesn't exist thus we put an eval around it.
 eval { $db_connection->do("DROP TABLE person") };
 print "<p>Dropping person failed: $@</p>" if $@;
@@ -80,7 +81,10 @@ $sth->finish();
 
 # Disconnect from the database.
 $db_connection->disconnect();
+# --- END: Database Table creation & Seeding ---
 
+
+print '<a href="/" class="btn btn-primary">Go Back</a>';
 
 print <<"HTML_FOOTER";
     </div>

@@ -5,7 +5,7 @@ metadata:
   labels:
     app: apache2
 spec:
-  replicas: 1 # Number of Instances of Your App
+  replicas: 3 # Number of Instances of Your App
   selector: # the selector is for the deployment to know which pod's it owns, make sure to keep labels the same everywhere
     matchLabels:
       app: apache2
