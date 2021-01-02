@@ -62,9 +62,9 @@ eval { $db_connection->do("DROP TABLE person") };
 print "<p>Dropping person failed: $@</p>" if $@;
 
 # Create a new table 'person'. This must not fail, thus we don't catch errors.
-$db_connection->do("CREATE TABLE person (id INTEGER NOT NULL AUTO_INCREMENT primary key, name VARCHAR(50) NOT NULL)");
+$db_connection->do("CREATE TABLE person (id INTEGER NOT NULL AUTO_INCREMENT primary key, surname VARCHAR(50) NOT NULL)");
 
-# INSERT some data into 'person'. We are using $db_connection->quote() for quoting the name.
+# INSERT some data into 'person'. We are using $db_connection->quote() for quoting the surname.
 $db_connection->do("INSERT INTO person VALUES (1, " . $db_connection->quote("Linus") . ")");
 
 # same thing, but using placeholders (recommended!)
@@ -74,7 +74,7 @@ $db_connection->do("INSERT INTO person VALUES (?, ?)", undef, 2, "Torvalds");
 my $sth = $db_connection->prepare("SELECT * FROM person");
 $sth->execute();
 while (my $ref = $sth->fetchrow_hashref()) {
-    print "<p class=\"mb-0\">Found a row: id = $ref->{'id'}, name = $ref->{'name'}</p>";
+    print "<p class=\"mb-0\">Found a row: id = $ref->{'id'}, name = $ref->{'surname'}</p>";
 }
 $sth->finish();
 

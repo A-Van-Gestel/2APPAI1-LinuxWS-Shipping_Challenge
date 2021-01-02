@@ -24,7 +24,7 @@ $ENV{'REQUEST_METHOD'} =~ tr/a-z/A-Z/;
 if ($ENV{'REQUEST_METHOD'} eq "GET") {
     $buffer = $ENV{'QUERY_STRING'};
 }
-# Split information into name/value pairs
+# Split information into key/value pairs
 @pairs = split(/&/, $buffer);
 foreach $pair (@pairs) {
     ($key, $value) = split(/=/, $pair);
@@ -82,7 +82,7 @@ HTML_EXTRA1
 if ($form_id ne "" && $form_name ne "") {
     # update statement
     my $sql = "UPDATE person
-           SET name = ?
+           SET surname = ?
 	       WHERE id = ?";
 
     my $sth = $db_connection->prepare($sql);
