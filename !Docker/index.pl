@@ -17,8 +17,8 @@ my $db_username = 'shipping_challenge';
 my $db_password = 'admin1234';
 my $db_connection = DBI->connect("DBI:$db_driver:$db_scheme:$db_ip", "$db_username", "$db_password"); #or die $DBI::errstr;
 
+print 'Content-type:text/html\r\n\r\n';
 print <<"HTML_HEADER";
-Content-type: text/html
 <!DOCTYPE html>
 <html lang="en">
 <head>
