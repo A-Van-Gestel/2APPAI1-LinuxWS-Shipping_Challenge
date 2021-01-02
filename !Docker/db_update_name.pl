@@ -47,8 +47,11 @@ Content-type:text/html\n\n
     <title>Hello World - First Shipping Challenge CGI script on Apache2!</title>
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+    <link rel="stylesheet" href="basic_footer.css"/>
 </head>
 <body>
+<div id="page-container">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
         <a class="navbar-brand">Shipping Challenge</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -68,9 +71,10 @@ Content-type:text/html\n\n
             </ul>
         </div>
     </nav>
-    <div class="container">
-        <h2>Hello Shipping Challenge! TUX is updating names in the house!</h2>
-        <p class="mb-0">Running MySQL + Apache2 + Perl</p>
+    <div id="page-main">
+        <div class="container">
+            <h2>Hello Shipping Challenge! TUX is updating names in the house!</h2>
+            <p class="mb-0">Running MySQL + Apache2 + Perl</p>
 HTML_HEADER
 
 print <<"HTML_EXTRA1";
@@ -116,7 +120,27 @@ else {
 print '<a href="/" class="btn btn-primary">Go Back</a>';
 
 print <<"HTML_FOOTER";
+        </div>
     </div>
+</div>
+    <footer id="page-footer" class="bg-dark text-muted">
+        <div class="container pt-4 text-center">
+            <div class="row justify-content-center">
+                <div class="col-6">
+                    <p>Copyright &copy; Axel Van Gestel - 2021</p>
+                </div>
+                <div class="col-6">
+                    <p>Linux Webservices - SHIPPING CHALLENGE 2020</p>
+                </div>
+                <div class="col-1">
+                    <a href="https://github.com/A-Van-Gestel/2APPAI1-LinuxWS-Shipping_Challenge" target="_blank" rel="noopener" class="text-muted"><i class="fab fa-github"></i></a>
+                </div>
+                <div class="col-1">
+                    <a href="https://hub.docker.com/repository/docker/johanaxel007/shipping-challenge" target="_blank" rel="noopener" class="text-muted"><i class="fab fa-docker"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.bundle.min.js"></script>
 </body>
