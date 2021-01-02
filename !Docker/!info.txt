@@ -23,6 +23,10 @@ kubectl apply -f service.yaml
 kubectl apply -f ingress.yaml
 
 
+--- Kubectl update Deployment ---
+kubectl rollout restart deployment/apache2
+
+
 
 --- Docker Push to Repo ---
 docker tag local-image:tagname new-repo:tagname

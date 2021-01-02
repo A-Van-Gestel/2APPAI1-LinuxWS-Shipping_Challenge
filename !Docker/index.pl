@@ -26,7 +26,7 @@ print '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitt
 print '</head>';
 print '<body>';
 print '<div class="container">';
-print '<h2>Hello World! TUX is in the house!</h2>';
+print '<h2>Hello Shipping Challenge! TUX is in the house!</h2>';
 print '<p">Running MySQL + Apache2 + Perl</p>';
 print "<p>Server IP = $server_ip</p>";
 
