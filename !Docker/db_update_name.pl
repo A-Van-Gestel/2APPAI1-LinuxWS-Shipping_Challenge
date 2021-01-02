@@ -17,6 +17,25 @@ my $db_username = 'shipping_challenge';
 my $db_password = 'admin1234';
 my $db_connection = DBI->connect("DBI:$db_driver:$db_scheme:$db_ip", "$db_username", "$db_password"); #or die $DBI::errstr;
 
+# --- START: Get User input using GET ---
+local ($buffer, @pairs, $pair, $key, $value, %FORM);
+# Read in text
+$ENV{'REQUEST_METHOD'} =~ tr/a-z/A-Z/;
+if ($ENV{'REQUEST_METHOD'} eq "GET") {
+    $buffer = $ENV{'QUERY_STRING'};
+}
+# Split information into name/value pairs
+@pairs = split(/&/, $buffer);
+foreach $pair (@pairs) {
+    ($key, $value) = split(/=/, $pair);
+    $value =~ tr/+/ /;
+    $value =~ s/%(..)/pack("C", hex($1))/eg;
+    $FORM{$key} = $value;
+}
+my $form_id = $FORM{id};
+my $form_name  = $FORM{name};
+# --- END: Get User input using GET ---
+
 print <<"HTML_HEADER";
 Content-type:text/html\n\n
 <!DOCTYPE html>
@@ -52,6 +71,7 @@ Content-type:text/html\n\n
 HTML_HEADER
 
 print "<p>Server IP = $server_ip</p>";
+print "<p>Form input: ID = <b>$form_id</b>; Name = <b>$form_name</b></p>";
 
 
 # update statement
