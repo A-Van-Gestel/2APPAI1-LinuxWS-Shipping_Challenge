@@ -3,6 +3,8 @@
 
 # The line below states we will base our new image on the Latest Official Ubuntu 
 FROM ubuntu:latest
+# labels
+LABEL version="0.8.0"
 
 # Pre-configure timezone to stop hang during build
 ENV TZ=Europe/Brussels
