@@ -54,21 +54,6 @@ HTML_HEADER
 print "<p>Server IP = $server_ip</p>";
 
 
-
-
-# Drop table 'person'. This may fail, if 'person' doesn't exist thus we put an eval around it.
-eval { $db_connection->do("DROP TABLE person") };
-print "<p>Dropping person failed: $@</p>" if $@;
-
-# Create a new table 'person'. This must not fail, thus we don't catch errors.
-$db_connection->do("CREATE TABLE person (id INTEGER, name VARCHAR(20))");
-
-# INSERT some data into 'person'. We are using $db_connection->quote() for quoting the name.
-$db_connection->do("INSERT INTO person VALUES (1, " . $db_connection->quote("Tim") . ")");
-
-# same thing, but using placeholders (recommended!)
-$db_connection->do("INSERT INTO person VALUES (?, ?)", undef, 2, "Jochen");
-
 # now retrieve data from the table.
 my $sth = $db_connection->prepare("SELECT * FROM person");
 $sth->execute();
