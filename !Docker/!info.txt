@@ -49,6 +49,8 @@ https://codefresh.io/docker-tutorial/build-docker-image-dockerfiles/
 https://www.tek-tips.com/faqs.cfm?fid=3509      // Dynamic get server IP
 https://docstore.mik.ua/orelly/perl4/cook/ch18_02.htm
 https://www.yourhtmlsource.com/cgi/perlvariables.html   // General Perl Stuff
+https://www.sitepoint.com/community/t/please-explain-how-to-use-eof/1531/2
+https://perlmaven.com/here-documents
 https://www.perlmonks.org/?node_id=10867        // Perl Debugging
 https://metacpan.org/pod/CGI::Carp
 https://metacpan.org/pod/DBD::mysql             // MySQL stuff

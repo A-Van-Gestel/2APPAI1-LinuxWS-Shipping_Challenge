@@ -56,8 +56,8 @@ print "<p>Server IP = $server_ip</p>";
 
 # update statement
 my $sql = "UPDATE person
-           SET name = ?,
-	   WHERE id = ?";
+           SET name = ?
+	       WHERE id = ?";
 
 my $sth = $db_connection->prepare($sql);
 
@@ -71,7 +71,7 @@ $sth->bind_param(2,$id);
 # execute the query
 $sth->execute();
 
-print "<div class=\"alert alert-success\" role=\"alert\">The record on <b>ID $id</b> has been updated to <b>$name</b> successfully!</div>";
+print "<div class=\"alert alert-success\" role=\"alert\">The record on ID <b>$id</b> has been updated to <b>$name</b> successfully!</div>";
 
 $sth->finish();
 
