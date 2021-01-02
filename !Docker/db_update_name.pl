@@ -70,8 +70,14 @@ Content-type:text/html\n\n
         <p class="mb-0">Running MySQL + Apache2 + Perl</p>
 HTML_HEADER
 
-print "<p>Server IP = $server_ip</p>";
-print "<p>Form input: ID = <b>$form_id</b>; Name = <b>$form_name</b></p>";
+print <<"HTML_EXTRA1";
+    <p>Server IP = $server_ip</p>
+    <p class="mb-0">Form input:
+    <p class="mb-0">ID = <b>$form_id</b></p>
+    <p>Name = <b>$form_name</b></p>
+HTML_EXTRA1
+
+
 
 
 # update statement
@@ -81,8 +87,8 @@ my $sql = "UPDATE person
 
 my $sth = $db_connection->prepare($sql);
 
-my $id = 1;
-my $name = "Updated name";
+my $id = $form_id;
+my $name = $form_name;
 
 # bind the corresponding parameter
 $sth->bind_param(1,$name);
@@ -98,6 +104,7 @@ $sth->finish();
 # Disconnect from the database.
 $db_connection->disconnect();
 
+print '<a href="/" class="btn btn-primary">Go Back</a>';
 
 print <<"HTML_FOOTER";
     </div>
