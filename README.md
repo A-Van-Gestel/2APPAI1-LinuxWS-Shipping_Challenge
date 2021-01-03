@@ -5,11 +5,34 @@
 - **Studentnr**: r0784084
 - **DockerHub**: [johanaxel007/shipping-challenge](https://hub.docker.com/repository/docker/johanaxel007/shipping-challenge)
 
-## Stack
-- **Webserver**: Apache2
-- **Database**: MySQL
-- **Script Language**: Perl
-- **Extra**: Portainer
+## My Stack
+| **Webserver** | **Database** | **Script Language** |   **Extra**   |
+|:-------------:|:------------:|:-------------------:|:-------------:|
+|    Apache2    |     MySQL    |         Perl        |   Portainer   |
+
+## The Challenge
+- Create your own kubernetes stack with 1 worker.
+- Containerized application on worker is the following.
+    ![Challenge](docs/challenge.png)
+    - When surname changes in Db, webpage changes automatically.
+    - When  layout of webpage changes, the worker will display the new layout automatically.
+    - Use the webstack which is assigned to you.
+
+### How to earn points?
+- 0/20 - be like Homer Simpson or Al Bundy
+- 10/20 - stack in Docker
+- 14/20 - mk8s cluster with 1 worker
+
+### Extra points
+- Vagrant
+- Extra worker
+- Management webplatform for containers, see Extra in [My Stack](#my-stack).
+- Something else than mk8s with the same purpose.
+
+### Nice to haves - Fun Factor
+- A practical linux joke for docents.
+- A linux koan to enlighten your docents.
+
 
 ## Installation
 ### Minikube
