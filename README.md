@@ -102,7 +102,7 @@ metadata:
     app: apache2
 spec:
   replicas: 3 # Number of Instances of Your App
-  selector: # the selector is for the deployment to know which pod's it owns, make sure to keep labels the same everywhere
+  selector:
     matchLabels:
       app: apache2
   template:
@@ -111,11 +111,11 @@ spec:
         app: apache2
     spec:
       containers:
-      - image: johanaxel007/shipping-challenge:latest # Pull custom apache2 image from hub.docker.com
-        imagePullPolicy: Always # this will always check for a newer image when a pod starts, you can also set it to IfNotPresent so it only downloads it if not on disk already
+      - image: johanaxel007/shipping-challenge:latest
+        imagePullPolicy: Always # this will always check for a newer image when a pod starts
         name: apache2 # name of the container, only used for you to know what is running
         ports:  
-        - containerPort: 80 # this gives the port 80 the name apache2, it does not expose it to the outside world yet
+        - containerPort: 80 # this gives the port 80 the name apache2
           name: apache2
 ```
 
