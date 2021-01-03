@@ -77,9 +77,6 @@
   - IF ELSE Syntax
     - https://alvinalexander.com/blog/post/perl/perl-if-else-elsif-syntax-example/
 
-### My SQL
-  - https://github.com/bitnami/charts/tree/master/bitnami/mysql
-
 ### Docker Repository
   - https://docs.docker.com/docker-hub/repos/
   - https://docs.docker.com/docker-hub/builds/
@@ -87,6 +84,8 @@
 ### Kubernetes
   - MySQL + Networking setup
     - https://github.com/meyskens/intro-to-k8s/tree/main/wordpress
+  - MySQL
+    - https://github.com/bitnami/charts/tree/master/bitnami/mysql
   - Ingress File
     - https://kubernetes.io/docs/concepts/services-networking/ingress/
   - Deployment File
