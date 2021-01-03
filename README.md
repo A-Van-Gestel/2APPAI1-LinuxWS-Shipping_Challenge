@@ -3,7 +3,6 @@
 - **Name**: Van Gestel Axel
 - **Class**: 2 APPAI 1
 - **Studentnr**: r0784084
-- **DockerHub**: [johanaxel007/shipping-challenge](https://hub.docker.com/repository/docker/johanaxel007/shipping-challenge)
 
 ## My Stack
 | **Webserver** | **Database** | **Script Language** |   **Extra**   |
@@ -33,6 +32,133 @@
 - A practical linux joke for docents.
 - A linux koan to enlighten your docents.
 
+## My Setup
+### Dockerfile
+```Dockerfile
+# The line below states we will base our new image on the Latest Official Ubuntu 
+FROM ubuntu:20.04
+# labels
+LABEL version="0.8.0"
+
+# Pre-configure timezone to stop hang during build
+ENV TZ=Europe/Brussels
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+# Update the image to the latest packages
+RUN	apt-get update && apt-get upgrade -y \
+	&& apt-get clean -y
+
+# Install Apache2 and Perl, enable cgid and disable the default site
+RUN apt-get install -y \
+		apache2 \
+		perl \
+		libcgi-pm-perl \
+		libdbi-perl \
+		libdbd-mysql-perl \
+	&& a2enmod cgid \
+	&& a2dissite 000-default \
+	&& rm /var/www/html/index.html
+	
+# Copy custom shipping-challenge site config to container
+COPY shipping-challenge.conf /etc/apache2/sites-enabled/shipping-challenge.conf
+COPY index.pl db_seed.pl db_update_name.pl basic_footer.css favicon.ico tux_in_box.png /var/www/html/
+
+RUN chmod +x /var/www/html/index.pl \
+            /var/www/html/db_seed.pl \
+            /var/www/html/db_update_name.pl \
+	&& service apache2 restart
+
+# Expose port 80
+EXPOSE 80
+
+# run Apache2 in foreground mode
+CMD ["apachectl", "-D", "FOREGROUND"]
+```
+#### Main steps
+- Get the Ubuntu 20.04 base image.
+- Setup the Timezone ~~(so Apache2 doesn't get mad)~~
+- Update everything
+- Install [My Stack](#my-stack)
+- Copy my Shipping Challenge Application
+- Make my Shipping Challenge Application executable
+- Expose port 80 for Apache2
+- Run Apache2 in foreground mode ~~(so Docker doesn't complain)~~
+
+### DockerHub
+My custom Shipping Challenge image is hosted on DockerHub and is accessible in the repo:  
+[johanaxel007/shipping-challenge](https://hub.docker.com/repository/docker/johanaxel007/shipping-challenge)
+
+Because my GitHub and DockerHub are linked, whenever I push something to this repository a new Shipping Challenge image is build on DockerHub via Automated Builds.
+
+### Kubernetes
+#### Deployment
+The deployment downloads the [Shipping Challenge](https://hub.docker.com/repository/docker/johanaxel007/shipping-challenge) image  and creates 3 pods of it. This has also been set up to keep the pods always up-to-date on a restart.
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apache2
+  labels:
+    app: apache2
+spec:
+  replicas: 3 # Number of Instances of Your App
+  selector: # the selector is for the deployment to know which pod's it owns, make sure to keep labels the same everywhere
+    matchLabels:
+      app: apache2
+  template:
+    metadata:
+      labels:
+        app: apache2
+    spec:
+      containers:
+      - image: johanaxel007/shipping-challenge:latest # Pull custom apache2 image from hub.docker.com
+        imagePullPolicy: Always # this will always check for a newer image when a pod starts, you can also set it to IfNotPresent so it only downloads it if not on disk already
+        name: apache2 # name of the container, only used for you to know what is running
+        ports:  
+        - containerPort: 80 # this gives the port 80 the name apache2, it does not expose it to the outside world yet
+          name: apache2
+```
+
+#### Service
+The service gives the Shipping Challenge pods the correct IP and Port.
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: apache2
+  labels:
+    app: apache2
+spec:
+  type: ClusterIP
+  ports:
+    - protocol: TCP
+      port: 80 # port on the service IP
+      targetPort: apache2 # port on the container, can also be a number
+  selector:
+    app: apache2
+```
+
+#### Ingress
+Ingress is used to expose the Shipping Challenge Application to the outside world, it also acts as the load balancer to keep things running smooth.
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: apache2-ingress
+  namespace: default
+spec:
+  rules:
+    - host: shipping-challenge.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: apache2
+                port:
+                  number: 80
+```
 
 ## Installation
 ### Minikube
