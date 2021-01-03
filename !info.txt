@@ -1,3 +1,4 @@
+-------- Docker --------
 --- Run docker image ---
 docker run -dit -p 80:80 shipping-challenge
 
@@ -16,18 +17,6 @@ CTRL + K
 --- Remove all none running Docker images ---
 docker system prune
 
-
---- Kubectl apply ---
-kubectl apply -f deployment.yaml
-kubectl apply -f service.yaml
-kubectl apply -f ingress.yaml
-
-
---- Kubectl update Deployment ---
-kubectl rollout restart deployment/apache2
-
-
-
 --- Docker Push to Repo ---
 docker tag local-image:tagname new-repo:tagname
 docker push new-repo:tagname
@@ -37,8 +26,17 @@ docker tag shipping-challenge:latest johanaxel007/shipping-challenge:latest
 docker push johanaxel007/shipping-challenge:latest
 
 
+-------- Kubectl --------
+--- Kubectl apply ---
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+kubectl apply -f ingress.yaml
 
---- sources ---
+--- Kubectl update Deployment ---
+kubectl rollout restart deployment/apache2
+
+
+-------- sources --------
 - Apache2 + Perl -
 https://github.com/pclinger/docker-apache-perl
 https://techexpert.tips/apache/perl-cgi-apache/
