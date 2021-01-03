@@ -68,8 +68,14 @@ https://docs.docker.com/docker-hub/repos/
 https://docs.docker.com/docker-hub/builds/
 
 -- Kubernetes --
+- MySQL + Networking setup
+https://github.com/meyskens/intro-to-k8s/tree/main/wordpress
 - Ingress File -
 https://kubernetes.io/docs/concepts/services-networking/ingress/
 
 - Deployment File -
 https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
+
+-- Portainer --
+https://documentation.portainer.io/v2.0/deploy/linux/
+https://github.com/portainer/portainer-k8s/blob/master/charts/portainer-beta/README.md
