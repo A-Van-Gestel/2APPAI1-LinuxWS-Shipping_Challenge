@@ -12,7 +12,7 @@
 ## The Challenge
 - Create your own kubernetes stack with 1 worker.
 - Containerized application on worker is the following.
-    ![Challenge](docs/challenge.png)
+    ![Challenge](docs/img/challenge.png)
     - When surname changes in Db, webpage changes automatically.
     - When  layout of webpage changes, the worker will display the new layout automatically.
     - Use the webstack which is assigned to you.
@@ -182,6 +182,11 @@ spec:
     - `kubectl apply -f ingress.yaml`
 - Get the Ingress IP Address (under `ADDRESS`).
     - `kubectl get ingress`
+    - Example:
+      
+      |     **NAME**      |   **CLASS**  |          **HOSTS**         |    **ADDRESS**   | **PORTS** |  **AGE**  |
+      |:-----------------:|:------------:|:--------------------------:|:----------------:|:---------:|:---------:|
+      |  apache2-ingress  |    \<none>   |  shipping-challenge.local  |  192.168.99.102  |    80     |   5d21h   |
 - Add the IP to your HOST File.
     - Windows example: `192.168.99.102 shipping-challenge.local`
 - Open your browser and surf to `shipping-challenge.local`.
@@ -203,6 +208,10 @@ spec:
     - `kubectl --namespace portainer port-forward $POD_NAME 9000:9000`
 - You can now open a Portainer tab
     - http://127.0.0.1:9000
+    
+## Updating
+- To update the Shipping Challenge application simply run, this will pull the latest release and perform a rolling update.
+    - `kubectl rollout restart deployment/apache2`
   
 ## Sources
 ### Apache2 + Perl
