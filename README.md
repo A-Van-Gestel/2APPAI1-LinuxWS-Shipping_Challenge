@@ -245,3 +245,6 @@ spec:
 ### Portainer
   - https://documentation.portainer.io/v2.0/deploy/linux/
   - https://github.com/portainer/portainer-k8s/blob/master/charts/portainer-beta/README.md
+
+### Bash Script
+ - http://matt.might.net/articles/bash-by-example/
