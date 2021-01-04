@@ -25,9 +25,8 @@ RUN apt-get install -y \
 	&& a2dissite 000-default \
 	&& rm /var/www/html/index.html
 	
-# Copy custom shipping-challenge site config to container
+# Copy shipping-challenge site config & app folder contents to container
 COPY ./apache2_config/shipping-challenge.conf /etc/apache2/sites-enabled/shipping-challenge.conf
-# Copy custom shipping-challenge Application contents to container
 COPY ./apache2_app/ /var/www/html/
 
 RUN chmod +x /var/www/html/index.pl \
