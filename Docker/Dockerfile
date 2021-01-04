@@ -27,7 +27,8 @@ RUN apt-get install -y \
 	
 # Copy custom shipping-challenge site config to container
 COPY ./apache2_config/shipping-challenge.conf /etc/apache2/sites-enabled/shipping-challenge.conf
-COPY ./apache2_app/index.pl ./apache2_app/db_seed.pl ./apache2_app/db_update_name.pl ./apache2_app/basic_footer.css ./apache2_app/favicon.ico ./apache2_app/tux_in_box.png /var/www/html/
+# Copy custom shipping-challenge Application contents to container
+COPY ./apache2_app/ /var/www/html/
 
 RUN chmod +x /var/www/html/index.pl \
             /var/www/html/db_seed.pl \

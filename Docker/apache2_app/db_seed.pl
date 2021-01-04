@@ -29,14 +29,15 @@ Content-type:text/html\n\n
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
-    <link rel="stylesheet" href="basic_footer.css"/>
+    <link rel="stylesheet" href="css/basic_footer.css"/>
 </head>
 <body>
 <div id="page-container">
     <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
         <!-- Bootstrap - Navbar Brand -->
         <a class="navbar-brand">Shipping Challenge</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#MainNav" aria-controls="MainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#MainNav"
+                aria-controls="MainNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -57,7 +58,7 @@ Content-type:text/html\n\n
             <div role="separator" class="dropdown-divider" style="max-width: 5rem"></div>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <img src="tux_in_box.png" alt="Tux in box" width="30" height="30">
+                    <img src="img/tux_in_box.png" alt="Tux in box" width="30" height="30">
                 </li>
             </ul>
         </div>
