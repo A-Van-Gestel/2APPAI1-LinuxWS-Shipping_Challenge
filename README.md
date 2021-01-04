@@ -167,13 +167,15 @@ spec:
     - `minikube addons enable ingress`
 - Install Kubectl.
     - [Kubectl | Installing Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
-- Install Helm 3 and add Bitnami Helm repo.
+- Install Helm 3.
     - [Helm | Installing Helm](https://helm.sh/docs/intro/install/)
-    - `helm repo add bitnami https://charts.bitnami.com/bitnami`
   
 ### Shipping Challenge
+- Add the Bitnami Helm repo.
+   - `helm repo add bitnami https://charts.bitnami.com/bitnami`
+   - `helm repo update`
 - Setup MySQL using Helm.
-   -  `helm install sc-mysql bitnami/mysql --set auth.password=admin1234 --set auth.username=shipping_challenge --set auth.database=shipping_challenge`
+   - `helm install sc-mysql bitnami/mysql --set auth.password=admin1234 --set auth.username=shipping_challenge --set auth.database=shipping_challenge`
 - Apply deployment.yaml, service.yaml and ingress.yaml using:
     - `kubectl apply -f deployment.yaml`
     - `kubectl apply -f service.yaml`
