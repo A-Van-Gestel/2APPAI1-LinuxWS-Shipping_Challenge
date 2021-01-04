@@ -38,7 +38,7 @@
 # The line below states we will base our new image on the Latest Official Ubuntu 
 FROM ubuntu:20.04
 # labels
-LABEL version="0.8.0"
+LABEL version="1.0.0"
 
 # Pre-configure timezone to stop hang during build
 ENV TZ=Europe/Brussels
