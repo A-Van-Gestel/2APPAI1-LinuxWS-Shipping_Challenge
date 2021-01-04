@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - image: johanaxel007/shipping-challenge:latest # Pull custom apache2 image from hub.docker.com
-        imagePullPolicy: Always # this will always check for a newer image when a pod starts, you can also set it to IfNotPresent so it only downloads it if not on disk already
+        imagePullPolicy: Always # this will always check for a newer image when a pod starts
         name: apache2 # name of the container, only used for you to know what is running
         ports:  
         - containerPort: 80 # this gives the port 80 the name apache2, it does not expose it to the outside world yet

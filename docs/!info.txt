@@ -1,18 +1,20 @@
--------- Docker --------
---- Run docker image ---
-docker run -dit -p 80:80 shipping-challenge
-
---- Build Docker image ---
-sudo docker build -t shipping-challenge .
-
---- Check status ---
-docker ps -a
-
+-------- Apache2 + NANO --------
 --- Check Apache HTML Page ---
 curl localhost
 
 --- Remove whole line in NANO ---
 CTRL + K
+
+
+-------- Docker --------
+--- Build Docker image ---
+sudo docker build -t shipping-challenge .
+
+--- Run docker image ---
+docker run -dit -p 80:80 shipping-challenge
+
+--- Check status ---
+docker ps -a
 
 --- Remove all none running Docker images ---
 docker system prune
