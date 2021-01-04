@@ -182,7 +182,6 @@ spec:
     - `kubectl apply -f ingress.yaml`
 - Get the Ingress IP Address (under `ADDRESS`).
     - `kubectl get ingress`
-    - Example:
       
       |     **NAME**      |   **CLASS**  |          **HOSTS**         |    **ADDRESS**   | **PORTS** |  **AGE**  |
       |:-----------------:|:------------:|:--------------------------:|:----------------:|:---------:|:---------:|
