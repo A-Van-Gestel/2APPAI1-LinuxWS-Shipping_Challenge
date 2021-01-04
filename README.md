@@ -165,6 +165,8 @@ spec:
 - Installed on Minikube on Windows 10 with the Ingress plugin enabled.
     - `minikube start`
     - `minikube addons enable ingress`
+- Install Kubectl.
+    - [Kubectl | Installing Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 - Install Helm 3 and add Bitnami Helm repo.
     - [Helm | Installing Helm](https://helm.sh/docs/intro/install/)
     - `helm repo add bitnami https://charts.bitnami.com/bitnami`
