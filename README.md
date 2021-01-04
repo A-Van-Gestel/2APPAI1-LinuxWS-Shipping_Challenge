@@ -211,6 +211,13 @@ spec:
 ## Updating
 - To update the Shipping Challenge application simply run, this will pull the latest release and perform a rolling update.
     - `kubectl rollout restart deployment/apache2`
+    
+## Final running setup
+### Shipping Challenge Application
+![shipping_challenge_app](docs/img/shipping_challenge_app.png)
+
+### Portainer dashboard
+![portainer_dashboard](docs/img/portainer_dashboard.png)
   
 ## Sources
 ### Apache2 + Perl
